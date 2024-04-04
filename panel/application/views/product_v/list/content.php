@@ -8,9 +8,11 @@
     <div class="col-md-12">
 		<div class="widget p-lg">
 
+        <?php if(empty($items)) { ?>
         <div class="alert alert-danger text-center">
 			<p>There is no data here. Please <a href="">click here</a>.</p>
 		</div>
+        <?php } else { ?>
 
 			<table class="table table-hover table-striped">
                 <thead>
@@ -23,104 +25,30 @@
                 </thead>
                 <tbody>
 
+                    <?php foreach($items as $item) { ?>
                     <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
+                        <td>#<?php echo $item->id; ?></td>
+                        <td><?php echo $item->url ?></td>
+                        <td><?php echo $item->title ?></td>
+                        <td><?php echo $item->description ?></td>
                         <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
+							<input 
+                            data-size="small" 
+                            type="checkbox" 
+                            data-switchery 
+                            data-color="#10c469" 
+                            <?php echo ($item->isActive) ? "checked" : "" ?>/>
                         </td>
                         <td>
                             <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
                             <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
-                        <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
-                            <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                        </td>
-                    </tr>
+                    <?php } ?>
 
-                    <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
-                        <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
-                            <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
-                        <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
-                            <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
-                        <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
-                            <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
-                        <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
-                            <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>#1</td>
-                        <td>monitor-askisi</td>
-                        <td>Monitör Askısı</td>
-                        <td>360 derece kullanılan monitör askısı</td>
-                        <td>
-							<input id="switch-2-2" data-size="small" type="checkbox" data-switchery data-color="#10c469" checked />
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-xs btn-danger btn-outline" title="delete"><i class="fa fa-trash"></i> Delete</a>
-                            <a href="" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                        </td>
-                    </tr>
                 </tbody>
 			</table>
+        <?php } ?>  
 		</div><!-- .widget -->
     </div>
     <!-- END column -->
