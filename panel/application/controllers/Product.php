@@ -37,7 +37,7 @@ class Product extends CI_Controller
 	{
 		$this->load->library("form_validation");
 		//kurallar yazilir
-		$this->form_validation->set_rules("product_name", "Product name", "required|trim");
+		$this->form_validation->set_rules("title", "Product name", "required|trim");
 		$this->form_validation->set_message(
 			array(
 				"required" => "<b>{field}</b> must be filled."
@@ -48,7 +48,23 @@ class Product extends CI_Controller
 		
 		if($validate)
 		{
-			echo "Başarılı";
+			$insert = $this->product_model->add(
+				array(
+					"title" 		=> $this->input->post("title"),
+					"description" 	=> $this->input->post("description"),
+					"url" 			=> "test...",
+					"rank"			=> 0,
+					"isActive" 		=> 1,
+					"createdAt" 	=> date("Y-m-d H:i:s")
+				)
+			);
+
+			if($insert)
+			{
+				echo "success";
+			} else {
+				echo "warning";
+			}
 		}
 		else {
 			$viewData = new stdClass();

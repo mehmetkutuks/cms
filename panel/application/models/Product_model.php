@@ -8,4 +8,9 @@ class Product_model extends CI_Model {
     public function get_all() {
         return $this->db->get($this->tableName)->result();
     }
+
+    public function add($data = array())
+    {
+        return $this->db->insert($this->tableName, $data);
+    }
 }
