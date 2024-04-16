@@ -11,7 +11,10 @@
                 <form action="<?php echo base_url("product/save"); ?>" method="post">
                     <div class="form-group">
                         <label>Product Name</label>
-                        <input type="text" class="form-control" placeholder="Product Name" name="product_name">
+                        <input type="text" class="form-control" placeholder="Product Name" name="product_name" <?php if(isset($form_error)){ if(form_error("product_name")){ ?>style="border-color: red;" <?php }}?>>
+                        <?php if(isset($form_error)){ ?>
+                        <small class="pull-right input-form-error"><?php echo form_error("product_name"); ?></small>
+                        <?php } ?>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
@@ -25,3 +28,4 @@
     </div>
     <!-- END column -->
 </div>
+
