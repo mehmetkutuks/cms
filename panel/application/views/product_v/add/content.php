@@ -11,7 +11,7 @@
                 <form action="<?php echo base_url("product/save"); ?>" method="post">
                     <div class="form-group">
                         <label>Product Name</label>
-                        <input type="email" class="form-control" placeholder="Product Name" name="product_name">
+                        <input type="text" class="form-control" placeholder="Product Name" name="product_name">
                     </div>
                     <div class="form-group">
                         <label>Description</label>
