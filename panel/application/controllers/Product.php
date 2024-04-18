@@ -61,9 +61,9 @@ class Product extends CI_Controller
 
 			if($insert)
 			{
-				echo "success";
+                redirect(base_url("product"));
 			} else {
-				echo "warning";
+                redirect(base_url("product"));
 			}
 		}
 		else {
