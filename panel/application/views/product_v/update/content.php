@@ -8,7 +8,7 @@
         <div class="widget">
             <hr class="widget-separator">
             <div class="widget-body">
-                <form action="<?php echo base_url("product/save"); ?>" method="post">
+                <form action="<?php echo base_url("product/update/$item->id"); ?>" method="post">
                     <div class="form-group">
                         <label>Product Name</label>
                         <input type="text" class="form-control" placeholder="Product Name" name="title" value="<?php echo $item->title; ?>" <?php if(isset($form_error)){ if(form_error("title")){ ?>style="border-color: red;" <?php }}?>>
@@ -22,7 +22,7 @@
                             <?php echo $item->description; ?>
                         </textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-md">Update</button>
                     <a href="<?php echo base_url("product"); ?>" class="btn btn-danger btn-md">Cancel</a>
                 </form>
             </div><!-- .widget-body -->
