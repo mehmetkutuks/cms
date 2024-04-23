@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    $(".sortable").sortable();
     $(".remove-btn").click(function (){
         var $data_url = $(this).data("url");
         swal({
@@ -23,5 +24,11 @@ $(document).ready(function (){
         {
             $.post($data_url, {data : $data}, function (response){})
         }
+    })
+    $(".sortable").on("sortupdate", function (){
+        var $data = $(this).sortable("serialize");
+        var $data_url = $(this).data("url");
+
+        $.post($data_url, {data : $data}, function (response){})
     })
 })

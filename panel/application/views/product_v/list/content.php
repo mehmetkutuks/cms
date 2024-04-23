@@ -16,20 +16,22 @@
 
 			<table class="table table-hover table-striped">
                 <thead>
+                    <th><i class="fa fa-reorder"></i></th>
                     <th>#id</th>
-                    <th>url</th>
                     <th>title</th>
+                    <th>url</th>
                     <th>description</th>
                     <th>status</th>
                     <th>process</th>
                 </thead>
-                <tbody>
+                <tbody class="sortable" data-url="<?php echo base_url("product/rankSetter"); ?>">
 
                     <?php foreach($items as $item) { ?>
-                    <tr>
+                    <tr id="ord-<?php echo $item->id; ?>">
+                        <td><i class="fa fa-reorder"></i></td>
                         <td>#<?php echo $item->id; ?></td>
-                        <td><?php echo $item->url ?></td>
                         <td><?php echo $item->title ?></td>
+                        <td><?php echo $item->url ?></td>
                         <td><?php echo $item->description ?></td>
                         <td>
 							<input
