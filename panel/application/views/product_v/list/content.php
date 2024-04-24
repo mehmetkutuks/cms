@@ -50,6 +50,7 @@
                                 <i class="fa fa-trash"></i> Delete
                             </button>
                             <a href="<?php echo base_url("product/update_form/$item->id"); ?>" class="btn btn-xs btn-info btn-outline" title="edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                            <a href="<?php echo base_url("product/image_form/$item->id"); ?>" class="btn btn-xs btn-dark btn-outline" title="images"><i class="fa fa-image"></i> Pictures</a>
                         </td>
                     </tr>
                     <?php } ?>
