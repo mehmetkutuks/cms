@@ -26,6 +26,11 @@
         <div class="widget">
             <hr class="widget-separator">
             <div class="widget-body">
+                <?php if(empty($item_images)) { ?>
+                    <div class="alert alert-danger text-center">
+                        <p>There are no images here.</p>
+                    </div>
+                <?php } else { ?>
                 <table class="table table-bordered table-striped table-hover pictures-list">
                     <thead>
                         <th class="text-center">#id</th>
@@ -35,12 +40,13 @@
                         <th class="text-center">Process</th>
                     </thead>
                     <tbody>
+                    <?php foreach ($item_images as $image) { ?>
                     <tr>
-                        <td class="w100 text-center">#id</td>
+                        <td class="w100 text-center"><?php echo $image->id ?></td>
                         <td class="w100 text-center">
-                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mccjwWhac57ypbQfqHyJrkwu3jXQlK2Z5jQujNXIJQxg=s176-c-k-c0x00ffffff-no-rj" alt="" width="50" class="img-responsive">
+                            <img src="<?php echo base_url("upload/{$viewFolder}/$image->img_url"); ?>" alt="<?php echo $image->img_url; ?>" width="50" class="img-responsive">
                         </td>
-                        <td>deneme urunu.jpg</td>
+                        <td><?php echo $image->img_url ?></td>
                         <td class="w100 text-center">
                             <input
                                     data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
@@ -49,114 +55,16 @@
                                     type="checkbox"
                                     data-switchery
                                     data-color="#10c469"
-                                <?php echo (true) ? "checked" : "" ?>/>
+                                <?php echo ($image->id) ? "checked" : "" ?>/>
                         </td>
                         <td class="w100 text-center">
                             <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="w100 text-center">#id</td>
-                        <td class="w100 text-center">
-                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mccjwWhac57ypbQfqHyJrkwu3jXQlK2Z5jQujNXIJQxg=s176-c-k-c0x00ffffff-no-rj" alt="" width="50" class="img-responsive">
-                        </td>
-                        <td>deneme urunu.jpg</td>
-                        <td class="w100 text-center">
-                            <input
-                                    data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
-                                    class="isActive"
-                                    data-size="small"
-                                    type="checkbox"
-                                    data-switchery
-                                    data-color="#10c469"
-                                <?php echo (true) ? "checked" : "" ?>/>
-                        </td>
-                        <td class="w100 text-center">
-                            <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w100 text-center">#id</td>
-                        <td class="w100 text-center">
-                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mccjwWhac57ypbQfqHyJrkwu3jXQlK2Z5jQujNXIJQxg=s176-c-k-c0x00ffffff-no-rj" alt="" width="50" class="img-responsive">
-                        </td>
-                        <td>deneme urunu.jpg</td>
-                        <td class="w100 text-center">
-                            <input
-                                    data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
-                                    class="isActive"
-                                    data-size="small"
-                                    type="checkbox"
-                                    data-switchery
-                                    data-color="#10c469"
-                                <?php echo (true) ? "checked" : "" ?>/>
-                        </td>
-                        <td class="w100 text-center">
-                            <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w100 text-center">#id</td>
-                        <td class="w100 text-center">
-                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mccjwWhac57ypbQfqHyJrkwu3jXQlK2Z5jQujNXIJQxg=s176-c-k-c0x00ffffff-no-rj" alt="" width="50" class="img-responsive">
-                        </td>
-                        <td>deneme urunu.jpg</td>
-                        <td class="w100 text-center">
-                            <input
-                                    data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
-                                    class="isActive"
-                                    data-size="small"
-                                    type="checkbox"
-                                    data-switchery
-                                    data-color="#10c469"
-                                <?php echo (true) ? "checked" : "" ?>/>
-                        </td>
-                        <td class="w100 text-center">
-                            <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w100 text-center">#id</td>
-                        <td class="w100 text-center">
-                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mccjwWhac57ypbQfqHyJrkwu3jXQlK2Z5jQujNXIJQxg=s176-c-k-c0x00ffffff-no-rj" alt="" width="50" class="img-responsive">
-                        </td>
-                        <td>deneme urunu.jpg</td>
-                        <td class="w100 text-center">
-                            <input
-                                    data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
-                                    class="isActive"
-                                    data-size="small"
-                                    type="checkbox"
-                                    data-switchery
-                                    data-color="#10c469"
-                                <?php echo (true) ? "checked" : "" ?>/>
-                        </td>
-                        <td class="w100 text-center">
-                            <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w100 text-center">#id</td>
-                        <td class="w100 text-center">
-                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mccjwWhac57ypbQfqHyJrkwu3jXQlK2Z5jQujNXIJQxg=s176-c-k-c0x00ffffff-no-rj" alt="" width="50" class="img-responsive">
-                        </td>
-                        <td>deneme urunu.jpg</td>
-                        <td class="w100 text-center">
-                            <input
-                                    data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
-                                    class="isActive"
-                                    data-size="small"
-                                    type="checkbox"
-                                    data-switchery
-                                    data-color="#10c469"
-                                <?php echo (true) ? "checked" : "" ?>/>
-                        </td>
-                        <td class="w100 text-center">
-                            <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
-                        </td>
-                    </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
+                <?php } ?>
             </div><!-- .widget-body -->
         </div><!-- .widget -->
     </div>
