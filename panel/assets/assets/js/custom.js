@@ -1,7 +1,7 @@
 $(document).ready(function (){
     $(".sortable").sortable();
 
-    $(".remove-btn").click(function (){
+    $(".content-container, .image_list_container").on('click', '.remove-btn', function (){
         var $data_url = $(this).data("url");
         swal({
             title: "Are you sure?",
@@ -18,7 +18,7 @@ $(document).ready(function (){
         });
     })
 
-    $(".isActive").change(function (){
+    $(".content-container, .image_list_container").on('change', '.isActive',function (){
         var $data = $(this).prop("checked");
         var $data_url = $(this).data("url");
 
@@ -48,10 +48,12 @@ $(document).ready(function (){
                         jackColor: jackColor
                     });
                 });
+                $(".sortable").sortable();
             })
         }
     })
-    $(".sortable").on("sortupdate", function (){
+
+    $(".content-container, .image_list_container").on("sortupdate", ".sortable", function (){
         var $data = $(this).sortable("serialize");
         var $data_url = $(this).data("url");
 
@@ -74,6 +76,7 @@ $(document).ready(function (){
                     jackColor: jackColor
                 });
             });
+            $(".sortable").sortable();
         })
     })
 })

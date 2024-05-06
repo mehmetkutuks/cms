@@ -5,6 +5,7 @@
 <?php } else { ?>
     <table class="table table-bordered table-striped table-hover pictures-list">
         <thead>
+        <th class="w50 text-center"><i class="fa fa-reorder"></i></th>
         <th class="text-center">#id</th>
         <th class="text-center">Image</th>
         <th>Image Name</th>
@@ -12,9 +13,10 @@
         <th class="text-center">Status</th>
         <th class="text-center">Process</th>
         </thead>
-        <tbody>
+        <tbody class="sortable" data-url="<?php echo base_url("product/imageRankSetter"); ?>">
         <?php foreach ($item_images as $image) { ?>
-            <tr>
+            <tr id="ord-<?php echo $image->id; ?>">
+                <td class="w50 text-center"><i class="fa fa-reorder"></i></td>
                 <td class="w100 text-center">#<?php echo $image->id ?></td>
                 <td class="w100 text-center">
                     <img src="<?php echo base_url("upload/{$viewFolder}/$image->img_url"); ?>" alt="<?php echo $image->img_url; ?>" width="50" class="img-responsive">
@@ -32,7 +34,7 @@
                 </td>
                 <td class="w100 text-center">
                     <input
-                            data-url="<?php echo base_url("product/isActiveSetter/"); ?>"
+                            data-url="<?php echo base_url("product/imageIsActiveSetter/$image->id"); ?>"
                             class="isActive"
                             data-size="small"
                             type="checkbox"
@@ -41,7 +43,7 @@
                         <?php echo ($image->isActive) ? "checked" : "" ?>/>
                 </td>
                 <td class="w100 text-center">
-                    <button data-url="" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
+                    <button data-url="<?php echo base_url("product/imageDelete/$image->id/$image->product_id"); ?>" class="btn btn-xs btn-danger btn-block btn-outline remove-btn" title="delete"><i class="fa fa-trash"></i> Delete</button>
                 </td>
             </tr>
         <?php } ?>

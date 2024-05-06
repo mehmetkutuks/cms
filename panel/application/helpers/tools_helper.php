@@ -7,3 +7,18 @@ function convertToSeo($text)
 
     return strtolower(str_replace($turkish, $convert, $text));
 }
+
+
+function getFileName($id)
+{
+
+    $CI = get_instance();
+    $CI->load->model('product_image_model');
+    $fileName = $CI->product_image_model->get(
+        array(
+            "id" => $id
+        )
+    );
+
+    return $fileName;
+}
