@@ -14,7 +14,7 @@
 		</div>
         <?php } else { ?>
 
-			<table class="table table-hover table-striped content-container">
+			<table class="table table-hover table-striped table-bordered content-container">
                 <thead>
                     <th class="w50 text-center"><i class="fa fa-reorder"></i></th>
                     <th class="text-center">#id</th>
@@ -43,7 +43,7 @@
                             data-color="#10c469" 
                             <?php echo ($item->isActive) ? "checked" : "" ?>/>
                         </td>
-                        <td>
+                        <td class="process-center">
                             <button
                                     data-url="<?php echo base_url("product/delete/$item->id"); ?>"
                                     class="btn btn-xs btn-danger btn-outline remove-btn" title="delete">

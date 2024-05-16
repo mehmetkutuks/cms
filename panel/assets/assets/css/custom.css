@@ -2,3 +2,17 @@
     font-size: 10px;
     color: #ff5b5b;
 }
+
+td{
+    vertical-align: middle!important;
+}
+th{
+    text-align: center;
+}
+.process-center {
+    text-align: center;
+}
+
+.sortable{
+    cursor: move;
+}
