@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    
     $(".sortable").sortable();
 
     $(".content-container, .image_list_container").on('click', '.remove-btn', function (){
